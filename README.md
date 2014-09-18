@@ -28,5 +28,15 @@ Step 3: name the activities in the dataset.
 The goal of this step is to replace the numbers presented in the column "activity" of mydata with descriptive activities names, listed in the activity_labels.txt file (in the UCI HAR dataset folder). Each number has been replaced with the activity it described. 
 
 Step 4: descriptive variable names. 
+Using colnames, rename each column of mydata starting from column 3. Column 1(subject) and column (2) were already named properly. All the other columns were named as V1, V2, etc. Using the label dataframe as reference, replace this name with the descriptive ones. Moreover, while writing, modify the sentences using complete words.
+
+Step 5: average of each variable by activity and subject.
+Using the chaining method, I create a new dataframe, "average". The chain contains the following commands:
+- mydata dataframe: the reference dataframe;
+- group_by: allows to group the variables by subject and activity; 
+- summarise_each(funs(mean)) allows to compute the average of each variable by activity and subject. 
+
+Step 6: Saving the data in .txt format
+Using write.table, save the dataset in .txt. Name the file as "dataproj.txt". It has been saved in the working directory. 
 
 
